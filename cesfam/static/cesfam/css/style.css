@@ -1,0 +1,82 @@
+
+body{
+    font-family:sans-serif;
+   
+}
+
+.slide{
+    margin-top: 10px;
+}
+
+.slide img{
+    height: 80vh;
+    width: 10px;
+}
+
+.navbar{
+    background-color: #FFDE59;
+    color: #FFFFFF;
+}
+.nav-pills{
+    background-color: #FAECB4;
+    color: #FFFFFF;
+}
+
+.d-inline-block {
+    alt: 0;
+    width: 50px;
+    height: 50px;
+}
+
+.login-box{
+   width: 320px;
+   height: 330px;
+   background: #FAECB4;
+   border: 2PX solid #FFFFFF;
+   border-radius: 15px;
+   top: 50%;
+   left:50%;
+   position: absolute;
+   transform: translate(-50%, -50%);
+   padding: 70px 30px;
+}
+
+
+.login-box .avatar{
+    background-color: #FFDE59;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+ }
+
+ .login-box label{
+    margin: 0;
+    padding: 0;
+    display: block;
+ }
+ 
+ .login-box input{
+    width: 100%;
+    margin-bottom: 5%;
+ }
+ 
+ .login-box input[type="text"],
+ .login-box input[type="contraseña"]{
+    border: none;
+    border-radius: 15px;
+    height: 35px;
+    color:grey;
+    font-size: 16px;
+ }
+
+ .login-box input[type="submit"]{
+    border: none;
+    background-color: #FFDE59;
+    height: 40px;
+    width: 125px;
+    font-size: 17px;
+    border-radius: 8px;
+ }

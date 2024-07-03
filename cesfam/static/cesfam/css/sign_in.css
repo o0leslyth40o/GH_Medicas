@@ -1,0 +1,36 @@
+:root{
+    --color-blanco:#fff;
+    --color-gris:rgb(167, 167, 167);
+    --color-negro:#000;
+}
+
+body{
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    background-color: #FAECB4;
+    color: var(--color-negro);
+    letter-spacing: .05rem; 
+}
+
+.bg-ligth{
+    background-color: var(--color-blanco)!important;
+}
+
+.bg-blue{
+    background-color: var(--color-azul)!important;
+}
+
+.p-6{
+    padding: 4rem 7rem;
+}
+
+.contact-box{
+    padding: 3rem;
+}
+
+
+.btn-primary{
+    border: 2px solid var(--color-azul);
+
+}
