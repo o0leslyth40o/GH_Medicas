@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CESFAM CRUZ MELO</title> <!-- Título de la pestaña -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/style.css">
+    
+    {% static %}
+    
+    <link rel="stylesheet" href="{% static 'cesfam/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'cesfam/css/style.css'%}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/validationEngine.jquery.min.css"/>
-    <link rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/validationEngine.jquery.min.css" 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/validationEngine.jquery.min.css" 
     integrity="sha512-fvBUZJJBrJrzrFYM/EN2isPokoNnx331y30ZXIxRRlop1aq6rT6d8oY6WJVsiXZoso0dIZ2nbQjtGLi6Kkxr/Q==" crossorigin="anonymous" />
-    <script src="./js/bootstrap.min.js"></script>
+    <script src="{% static 'cesfam/js/bootstrap.min.js' %}"></script>
     
   </head>
 
@@ -19,7 +21,7 @@
 
     <nav class="navbar">
       <div class="container-fluid">
-        <img src="./img/logo_independencia.png"class="d-inline-block align-text-top">
+        <img src="{% static 'cesfam/img/logo_independencia.png' %}"class="d-inline-block align-text-top">
         <form class="d-flex" id="buscaForm">
           <input class="form-control me-2" type="search" placeholder="  " aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
