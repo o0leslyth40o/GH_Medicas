@@ -1,4 +1,8 @@
 from django.shortcuts import render
+from .models import models
+# Cambiar modelo a importar cuando este creado.
+
+
 
 # Create your views here.
 
