@@ -1,0 +1,47 @@
+{% extends "cesfam/base.html" %}
+
+{% load static %}
+
+
+{% block contenido %}
+
+    <div class="row">
+        <div class="card text-center" style="width: 18rem; margin: 25px">
+            <img src="{% static 'cesfam/img/paracetamol.png' %}" class="card-img-top" alt="paracetamol">
+            <div class="card-body">
+                <h5 class="card-title">paracetamol</h5>
+                <p class="card-text">La ingesta de paracetamol
+                sirve para rebajar cualquier tipo de dolor que tenga una persona en su cuerpo como es el caso del dolor de cabeza o el dolor causado por un golpe en una pierna o en un brazo.</p>
+                <a href="#" class="btn btn-primary">Ver stock</a>
+            </div>
+        </div>
+        <br>
+        <div class="card text-center" style="width: 18rem; margin: 25px">
+            <img src="{% static 'cesfam/img/amoxicilina.png' %}" class="card-img-top" alt="amoxicilina">
+            <div class="card-body">
+                <h5 class="card-title">amoxicilina</h5>
+                <p class="card-text">La amoxicilina es un antibiótico muy utilizado para el tratamiento de infecciones bacterianas de las vías respiratorias o como parte del esquema de antibióticos contra la bacteria H.pylori.</p>
+                <a href="#" class="btn btn-primary">Ver stock</a>
+            </div>
+        </div>
+        <br>
+        <div class="card text-center" style="width: 18rem; margin: 25px">
+            <img src="{% static 'cesfam/img/ibuprofeno.png' %}" class="card-img-top" alt="ibuprofeno">
+            <div class="card-body">
+                <h5 class="card-title">ibuprofeno</h5>
+                <p class="card-text">El Ibuprofeno está indicado para una serie de condiciones, especialmente para los casos de dolor de origen inflamatorio, como artritis, dolor traumático, inflamaciones de los dientes, etc.</p>
+                <a href="#" class="btn btn-primary">Ver stock</a>
+            </div>
+        </div>
+        <br>
+        <div class="card text-center" style="width: 18rem; margin: 25px">
+            <img src="{% static 'cesfam/img/sertralina.png' %}" class="card-img-top" alt="sertralina">
+            <div class="card-body">
+                <h5 class="card-title">sertralina</h5>
+                <p class="card-text">La sertralina se utiliza para tratar la depresión, el trastorno obsesivo-compulsivo, los ataques de pánico.</p>
+                <a href="#" class="btn btn-primary">Ver stock</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

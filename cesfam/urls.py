@@ -1,8 +1,8 @@
-from django.urls import path, include
+from django.urls import path
 from .views import home, login, farmacia, sign_in
 
 
-
+# defini la ruta.
 urlpatterns = [
     path('', home, name= "home"),
     path('login/', login, name="login"),
