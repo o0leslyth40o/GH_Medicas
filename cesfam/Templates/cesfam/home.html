@@ -1,6 +1,7 @@
- {% extends "cesfam/base.html" %}
+{% extends "cesfam/base.html" %}
+{% static %}
 
-{% block  %}
+{% block contenido %}
 
               <!-- Inicio del carrusel-->
 <div class="container-fluid">
@@ -12,7 +13,7 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="./img/consultorio.png" class="d-block w-100" alt="consultorio">
+      <img src="{% static 'cesfam/img/consultorio.png' %}" class="d-block w-100" alt="consultorio">
       <div class="carousel-caption d-none d-md-block">
         <h2>Dirección</h2>
         <p>Av. Independencia 1325, Independencia, Región Metropolitana.</p>
@@ -20,14 +21,14 @@
     </div>
     <!--como llegar-->
     <div class="carousel-item">
-      <img src="./img/mapa.png" class="d-block w-100" alt="mapa">
+      <img src="{% static 'cesfam/img/mapa.png' %}" class="d-block w-100" alt="mapa">
       <div class="carousel-caption d-none d-md-block">
         <a href="ubicacion.html"> ¿Como llegar?</a>
         <p>Some representative placeholder content for the second slide.</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="./img/horarioatencion.png" class="d-block w-100" alt="horarioatencion">
+      <img src="{% static 'cesfam/img/horarioatencion.png' %}" class="d-block w-100" alt="horarioatencion">
       <div class="carousel-caption d-none d-md-block">
       </div>
     </div>
