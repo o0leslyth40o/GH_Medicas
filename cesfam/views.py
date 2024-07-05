@@ -5,5 +5,6 @@ from django.shortcuts import render
 def home(request):
     return render(request, 'cesfam/home.html')
 
+
 def farmacia(request):
     return render(request, 'cesfam/farmacia.html')
