@@ -7,3 +7,9 @@ class especialidad(models.Model):
 
     def __str__(self):
         return self.nombre
+
+class genero(models.Model):
+    genero = models.CharField(db_column='genero', max_length=20, blank=False, null=False)
+
+    def __str__(self):
+        return self.genero
