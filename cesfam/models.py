@@ -23,4 +23,4 @@ class medico(models.Model):
     genero = models.ForeignKey('genero', on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.nombre
+        return self.nombre +" "+ self.appaterno +" "+ self.apmaterno
