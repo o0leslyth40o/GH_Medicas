@@ -43,7 +43,7 @@ class paciente(models.Model):
 class ficha(models.Model):
     nFicha = models.IntegerField(db_column='nFicha', primary_key=True, verbose_name='Numero de Ficha')
     direccion = models.CharField(max_length=50, verbose_name='Direccion')
-    rut = models.CharField(verbose_name='Rut')
+    rut = models.CharField(max_length=10, verbose_name='Rut')
     sector = models.ForeignKey('sector', on_delete=models.CASCADE, max_length=10)
 
     def __str__(self):
