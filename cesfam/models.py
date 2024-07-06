@@ -20,7 +20,6 @@ class medico(models.model):
     appaterno = models.CharField(max_length=30, verbose_name='Apellido Paterno')
     apmaterno = models.CharField(max_length=30, verbose_name='Apellido Materno')
     especialidad = models.ForeignKey(especialidad, on_delete=models.CASCADE)
-    genero = models.ForeignKey(genero, on_delete=models.CASCADE)
-
+    
     def __str__(self):
         return self.nombre
