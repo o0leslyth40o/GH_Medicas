@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+ 
+     {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'cesfam/css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'cesfam/css/bootstrap.min.css' %}">
+
+
+    <title>Registro de Usuario</title> <!-- Título de la pestaña -->
+    
+  </head>
+
+  <body>
+  <nav class="navbar">
+      <div class="container-fluid">
+        <img src="{% static 'cesfam/img/logo_independencia.png' %}"class="d-inline-block align-text-top">
+        <form class="d-flex" id="buscaForm">
+          <input class="form-control me-2" type="search" placeholder="  " aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>  CESFAM Dr. Agustin Cruz Melo
+      </div>
+    </nav>
+
+    {% load cryspy_forms_tags %}
+    <div class="container">
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-12 col-md-6 offset-md-3">
+            <div class="card">
+            
+                <div class="card-body">
+                    <h2>Registro de usuario</h2>
+                    <hr>
+                    <form id="Login" action=" " method="post">
+
+                        {% csrf_token %}
+
+                        {{ form | cryspy }}
+
+                        <input type="submit" value="Registrar">
+                        <br>
+                        <a href="{% url 'home' %}">Ir al home</a>
+                        <br>
+                        <a href="{% url 'login' %}">Iniciar sesión</a>
+                        <br>
+                    </form>
+
+                </div>
+            </div>
+        </div>  
+    </div>
+    </div>
+    
+    </body>
+</html>
+
+
+
+        
