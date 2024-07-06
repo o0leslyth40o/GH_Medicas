@@ -11,4 +11,6 @@ def home(request):
 
 
 def farmacia(request):
+    # Crear clase modelo para importarla y subir imagenes desde farmacia.
     return render(request, 'cesfam/farmacia.html')
+

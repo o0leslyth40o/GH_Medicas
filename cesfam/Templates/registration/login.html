@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+ 
+     {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'cesfam/css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'cesfam/css/bootstrap.min.css' %}">
+
+
+    <title>CESFAM CRUZ MELO</title> <!-- Título de la pestaña -->
+    
+  </head>
+    
+
+  <body>
+  <nav class="navbar">
+      <div class="container-fluid">
+        <img src="{% static 'cesfam/img/logo_independencia.png' %}"class="d-inline-block align-text-top">
+        <form class="d-flex" id="buscaForm">
+          <input class="form-control me-2" type="search" placeholder="  " aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>  CESFAM Dr. Agustin Cruz Melo
+      </div>
+    </nav>
+ 
+    <div class="login-box">
+        <img class="avatar" src="{% static 'cesfam/img/usuario.png' %}" alt="logo muni">      
+        <form id="Login" action=" " method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Ingresar">
+            <br>
+            <a href="{% url 'home' %}">Ir al home</a>
+            <br>
+            <a href="#">Crear cuenta</a>
+            <br>
+
+        </form>
+        </div>
+    </body>
+</html>
