@@ -42,12 +42,18 @@ class paciente(models.Model):
 
 class ficha(models.Model):
     nFicha = models.IntegerField(db_column='nFicha', primary_key=True, verbose_name='Numero de Ficha')
-    direccion = models.ForeignKey('paciente', on_delete=models.CASCADE)
-    rut = models.ForeignKey('paciente', on_delete=models.PROTECT, verbose_name='Rut')
-    sector = models.CharField(max_length=10)
+    direccion = models.CharField(max_length=50, verbose_name='Direccion')
+    rut = models.CharField(verbose_name='Rut')
+    sector = models.ForeignKey('sector', on_delete=models.CASCADE, max_length=10)
 
     def __str__(self):
         return self.nFicha
+
+class sector(models.Model):
+    nombre = models.CharField(db_column='sector', max_length=10)
+
+    def __str__(self):
+        return self.nombre
 
 
     
