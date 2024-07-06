@@ -55,5 +55,21 @@ class sector(models.Model):
     def __str__(self):
         return self.nombre
 
+class agenda(models.Model):
+    hora = models.TimeField()
+    fecha = models.DateField()
+    especialidad = models.ForeignKey('especialidad', on_delete=models.CASCADE)
 
-    
+    def __str__(self):
+        return self.fecha
+
+class atencion(models.Model):
+    idAtencion = models.IntegerField(primary_key=True)
+    fecha = models.DateField()
+    especialidad = models.ForeignKey('especialidad', on_delete=models.CASCADE)
+    rut = models.ForeignKey('paciente', on_delete=models.PROTECT)
+    hora = models.TimeField()
+    historial = models.TextField(max_length=1500)
+
+    def __str__(self):
+        return self.idAtencion
