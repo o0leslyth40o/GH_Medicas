@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import especialidad, genero, medico, paciente, ficha, sector
+from .models import especialidad, genero, medico, paciente, ficha, sector, agenda, atencion
 
 # Register your models here.
 admin.site.register(especialidad)
@@ -8,3 +8,5 @@ admin.site.register(medico)
 admin.site.register(paciente)
 admin.site.register(ficha)
 admin.site.register(sector)
+admin.site.register(agenda)
+admin.site.register(atencion)
