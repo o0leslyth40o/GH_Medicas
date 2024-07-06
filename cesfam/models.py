@@ -24,3 +24,25 @@ class medico(models.Model):
 
     def __str__(self):
         return self.nombre +" "+ self.appaterno +" "+ self.apmaterno
+    
+    
+class paciente(models.Model):
+    rut = models.CharField(max_length=10, primary_key=True, verbose_name='Rut')
+    nombre = models.CharField(max_length=30, verbose_name='Nombre')
+    appaterno = models.CharField(max_length=30, verbose_name='Apellido Paterno')
+    apmaterno = models.CharField(max_length=30, verbose_name='Apellido Materno')
+    nFicha = models.ForeignKey('ficha', on_delete=models.CASCADE)
+    edad = models.IntegerField(max_length=2, verbose_name='Edad')
+    direccion = models.CharField(max_length=50, verbose_name='Direccion')
+    genero = models.ForeignKey('genero', on_delete=models.CASCADE, db_column='genero')
+
+    def __str__(self):
+        return self.nombre +" "+ self.appaterno +" "+ self.apmaterno
+   
+
+
+
+
+
+
+    
