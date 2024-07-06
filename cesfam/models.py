@@ -41,7 +41,7 @@ class paciente(models.Model):
    
 
 class ficha(models.Model):
-    nFicha = models.ImageField(db_column='nFicha', primary_key=True, max_length=6, verbose_name='Numero de Ficha')
+    nFicha = models.IntegerField(db_column='nFicha', primary_key=True, verbose_name='Numero de Ficha')
     direccion = models.ForeignKey(paciente, on_delete=models.CASCADE)
     rut = models.CharField()
     sector = models.CharField(max_length=10)
