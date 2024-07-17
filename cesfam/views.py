@@ -1,6 +1,6 @@
 from pyexpat.errors import messages
 from django.shortcuts import redirect, render
-from .models import models
+from .models import producto
 from .forms import customUserCreationForm
 from django.contrib.auth import authenticate, login
 # Cambiar modelo a importar cuando este creado.
@@ -14,8 +14,12 @@ def home(request):
 
 
 def farmacia(request):
+    productos = producto.objects.all()
+    data = {
+        'productos': productos
+    }
     # Crear clase modelo para importarla y subir imagenes desde farmacia.
-    return render(request, 'cesfam/farmacia.html')
+    return render(request, 'cesfam/farmacia.html', data)
 
 def registro(request):
     data = {
