@@ -18,8 +18,8 @@ def farmacia(request):
     data = {
         'productos': productos
     }
-    # Crear clase modelo para importarla y subir imagenes desde farmacia.
     return render(request, 'cesfam/farmacia.html', data)
+
 
 def registro(request):
     data = {
@@ -38,6 +38,7 @@ def registro(request):
         data["form"] = formulario
     return render(request, 'registration/registro.html', data)
 
+
 def agregar_producto(request):
     data ={
         'form': productoForm()
@@ -52,4 +53,15 @@ def agregar_producto(request):
             data["form"] = formulario
 
     return render(request, 'cesfam/crud_farmacia/agregar.html', data)
+
+
+def listar_producto(request):
+    productos = producto.objects.all()
+    data = {
+        'productos': productos
+    }
+    return render(request, 'cesfam/crud_farmacia/listar.html', data)
+
+
+
 
