@@ -1,7 +1,7 @@
 from pyexpat.errors import messages
 from django.shortcuts import redirect, render
 from .models import producto
-from .forms import customUserCreationForm
+from .forms import customUserCreationForm, productoForm
 from django.contrib.auth import authenticate, login
 # Cambiar modelo a importar cuando este creado.
 
@@ -37,3 +37,19 @@ def registro(request):
 
         data["form"] = formulario
     return render(request, 'registration/registro.html', data)
+
+def agregar_producto(request):
+    data ={
+        'form': productoForm()
+    }   
+
+    if request.method == 'POST':
+        formulario = productoForm(data=request.POST, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"] = "Guardado correctamente"
+        else:
+            data["form"] = formulario
+
+    return render(request, 'cesfam/crud_farmacia/agregar.html', data)
+
