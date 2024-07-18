@@ -17,6 +17,7 @@ class productoForm(forms.ModelForm):
         model = producto
         fields = '__all__'
 
+
 class medicoForm(forms.ModelForm):
 
     class Meta:

@@ -109,6 +109,7 @@ def agregar_medico(request):
 
 
 def listar_medico(request):
+
     medicos = medico.objects.all()
     data = {
         'medicos': medicos

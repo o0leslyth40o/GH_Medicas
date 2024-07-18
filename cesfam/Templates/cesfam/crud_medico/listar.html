@@ -16,22 +16,20 @@
                 <th>Apellido Materno</th>
                 <th>Especialidad</th>
                 <th>Genero</th>
-                <th>Imagen</th>
                 <th>Opción</th>
             </tr>
 
-        {% for m in medico %}
+        {% for m in medicos %}
             <tr>
                 <td>{{ m.rut }}</td>
                 <td>{{ m.nombre }}</td>
                 <td>{{ m.appaterno }}</td>
                 <td>{{ m.apmaterno }}</td>
                 <td>{{ m.especialidad }}</td>
-                <td>{{ m.enero }}</td>
-                <td>{{ m.imagen }}</td>
+                <td>{{ m.genero }}</td>
                 <td>
-                    <a href="{% url 'editar_medico' p.id %}" class="btn btn-warning btn-sm">Editar</a>
-                    <a href="{% url 'eliminar_medico' p.id %}" class="btn btn-warning btn-sm">Eliminar</a>
+                    <a href="{% url 'editar_medico' m.pk %}" class="btn btn-warning btn-sm">Editar</a>
+                    <a href="{% url 'eliminar_medico' m.pk %}" class="btn btn-warning btn-sm">Eliminar</a>
                 </td>
             </tr>
 
