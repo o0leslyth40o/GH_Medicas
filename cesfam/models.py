@@ -57,9 +57,9 @@ class sector(models.Model):
         return self.nombre
 
 class agenda(models.Model):
-    hora = models.TimeField()
-    fecha = models.DateField()
     especialidad = models.ForeignKey('especialidad', on_delete=models.CASCADE)
+    fecha = models.DateField()
+    hora = models.TimeField()
 
     def __str__(self):
         return self.fecha

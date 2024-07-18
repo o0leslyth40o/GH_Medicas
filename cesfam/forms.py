@@ -1,5 +1,5 @@
 from django import forms
-from .models import producto, medico
+from .models import producto, medico, agenda
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
@@ -22,4 +22,11 @@ class medicoForm(forms.ModelForm):
 
     class Meta:
         model = medico
+        fields = '__all__'
+
+
+class agendaForm(forms.ModelForm):
+
+    class Meta:
+        model = agenda
         fields = '__all__'

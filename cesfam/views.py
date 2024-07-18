@@ -1,7 +1,7 @@
 from pyexpat.errors import messages
 from django.shortcuts import redirect, render, get_object_or_404
-from .models import producto, medico
-from .forms import customUserCreationForm, productoForm, medicoForm
+from .models import producto, medico, agenda
+from .forms import customUserCreationForm, productoForm, medicoForm, agendaForm
 from django.contrib.auth import authenticate, login
 # Cambiar modelo a importar cuando este creado.
 
@@ -19,6 +19,21 @@ def farmacia(request):
         'productos': productos
     }
     return render(request, 'cesfam/farmacia.html', data)
+
+def agendar(request):
+    agendas = agenda.objects.all()
+    data = {
+        'agendas': agendas
+    }
+    if request.method == 'POST':
+        formulario = agendaForm(data=request.POST, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"] = "Su hora ha sido agendada correctamente"
+        else:
+            data["form"] = formulario
+
+    return render(request, 'cesfam/agendar.html', data)
 
 
 def registro(request):
