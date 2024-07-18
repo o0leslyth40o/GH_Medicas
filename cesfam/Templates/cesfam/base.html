@@ -43,13 +43,32 @@
         <a class="flex-sm-fill text-sm-center nav-link" href="{% url 'login' %}">Iniciar Sesión</a>
         </li>
         {% endif %}
+        <li>
         <a class="flex-sm-fill text-sm-center nav-link" href="{% url 'home' %}">Home</a>
+        </li>
+        <li>
         <a class="flex-sm-fill text-sm-center nav-link" href="{% url 'farmacia' %}">Farmacia</a>
+        </li>
+        <li>
         <a class="flex-sm-fill text-sm-center nav-link" href="{% url 'agendar' %}">Reservar Hora</a>
+        </li>
+        {% if perms.cesfam.add_producto %}
+        <li>
         <a class="flex-sm-fill text-sm-center nav-link" href="{% url 'agregar_producto' %}">Agregar Medicamento</a>
+        </li>
+        {% endif %}
+        {% if perms.cesfam.view_producto %}
+        <li>
         <a class="flex-sm-fill text-sm-center nav-link" href="{% url 'listar_producto' %}">Lista de Medicamentos</a>
+        </li>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <li>
         <a class="flex-sm-fill text-sm-center nav-link" href="{% url 'agregar_medico' %}">Nuevo Doctor</a>
+        </li>
+        <li>
         <a class="flex-sm-fill text-sm-center nav-link" href="{% url 'listar_medico' %}">Lista Doctores</a>
+        </li>
       </nav>
     </div>
 
