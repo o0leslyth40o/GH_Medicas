@@ -68,10 +68,7 @@ def listar_producto(request):
 
 
 def editar_producto(request, id):
-
-    
     productos = get_object_or_404(producto, id=id)
-
     data = {
         'form': productoForm(instance=productos)
     }
@@ -80,11 +77,19 @@ def editar_producto(request, id):
         formulario = productoForm(data=request.POST, instance=productos, files=request.FILES)
         if formulario.is_valid():
             formulario.save()
+            data["mensaje"] = "Guardado correctamente"
             return redirect(to="listar_producto")
         else:
             data["form"] = formulario
-
-
     return render(request, 'cesfam/crud_farmacia/editar.html', data)
+
+
+def eliminar_producto(request, id):
+    productos = get_object_or_404(producto, id=id)
+    productos.delete()
+    return redirect(to="listar_producto")
+
+
+
 
 
