@@ -109,7 +109,7 @@ def eliminar_producto(request, id):
 
 
 #---------------------------CRUD MEDICO----------------------------------------------------------------------
-
+@permission_required('cesfam.add_medico')
 def agregar_medico(request):
     data ={
         'form': medicoForm()
@@ -125,7 +125,7 @@ def agregar_medico(request):
 
     return render(request, 'cesfam/crud_medico/agregar.html', data)
 
-
+@permission_required('cesfam.view_medico')
 def listar_medico(request):
 
     medicos = medico.objects.all()
@@ -134,8 +134,9 @@ def listar_medico(request):
     }
     return render(request, 'cesfam/crud_medico/listar.html', data)
 
-
+@permission_required('cesfam.change_medico')
 def editar_medico(request, id):
+
     medicos = get_object_or_404(medico, id=id)
     data = {
         'form': medicoForm(instance=medicos)
@@ -151,7 +152,7 @@ def editar_medico(request, id):
             data["form"] = formulario
     return render(request, 'cesfam/crud_medico/editar.html', data)
 
-
+@permission_required('cesfam.delete_medico')
 def eliminar_medico(request, id):
     medicos = get_object_or_404(medico, id=id)
     medicos.delete()

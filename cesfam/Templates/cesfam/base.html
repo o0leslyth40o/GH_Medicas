@@ -62,13 +62,16 @@
         <a class="flex-sm-fill text-sm-center nav-link" href="{% url 'listar_producto' %}">Lista de Medicamentos</a>
         </li>
         {% endif %}
-        {% if user.is_authenticated %}
+        {% if perms.cesfam.add_medico %}
         <li>
         <a class="flex-sm-fill text-sm-center nav-link" href="{% url 'agregar_medico' %}">Nuevo Doctor</a>
         </li>
+        {% endif %}
+        {% if perms.cesfam.view_medico %}
         <li>
         <a class="flex-sm-fill text-sm-center nav-link" href="{% url 'listar_medico' %}">Lista Doctores</a>
         </li>
+        {% endif %}
       </nav>
     </div>
 
