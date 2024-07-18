@@ -137,7 +137,7 @@ def listar_medico(request):
 @permission_required('cesfam.change_medico')
 def editar_medico(request, id):
 
-    medicos = get_object_or_404(medico, id=id)
+    medicos = get_object_or_404(medico, pk=id)
     data = {
         'form': medicoForm(instance=medicos)
     }
@@ -154,7 +154,7 @@ def editar_medico(request, id):
 
 @permission_required('cesfam.delete_medico')
 def eliminar_medico(request, id):
-    medicos = get_object_or_404(medico, id=id)
+    medicos = get_object_or_404(medico, pk=id)
     medicos.delete()
     return redirect(to="listar_medico")
 
