@@ -3,6 +3,7 @@ from django.shortcuts import redirect, render, get_object_or_404
 from .models import producto, medico, agenda
 from .forms import customUserCreationForm, productoForm, medicoForm, agendaForm
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required, permission_required
 # Cambiar modelo a importar cuando este creado.
 
 
@@ -54,9 +55,9 @@ def registro(request):
     return render(request, 'registration/registro.html', data)
 
 
+#---------------------------CRUD FARMACIA----------------------------------------------------------------------
 
-  #---------------------------CRUD FARMACIA----------------------------------------------------------------------
-
+@permission_required('cesfam.add_producto')
 def agregar_producto(request):
     data ={
         'form': productoForm()
@@ -73,6 +74,7 @@ def agregar_producto(request):
     return render(request, 'cesfam/crud_farmacia/agregar.html', data)
 
 
+@permission_required('cesfam.view_producto')
 def listar_producto(request):
     productos = producto.objects.all()
     data = {
@@ -81,7 +83,7 @@ def listar_producto(request):
     return render(request, 'cesfam/crud_farmacia/listar.html', data)
 
 
-
+@permission_required('cesfam.change_producto')
 def editar_producto(request, id):
     productos = get_object_or_404(producto, id=id)
     data = {
@@ -98,14 +100,15 @@ def editar_producto(request, id):
             data["form"] = formulario
     return render(request, 'cesfam/crud_farmacia/editar.html', data)
 
-
+@permission_required('cesfam.delete_producto')
 def eliminar_producto(request, id):
     productos = get_object_or_404(producto, id=id)
     productos.delete()
     return redirect(to="listar_producto")
 
 
- #---------------------------CRUD MEDICO----------------------------------------------------------------------
+
+#---------------------------CRUD MEDICO----------------------------------------------------------------------
 
 def agregar_medico(request):
     data ={
